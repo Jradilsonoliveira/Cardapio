@@ -6,11 +6,10 @@ import { useHistory } from 'react-router-dom';
 import { FiPlus } from "react-icons/fi";
 
 //import Sidebar from '../components/Sidebar';
-import mapIcon from './RestaurantMap';
+//import mapIcon from '../utils/mapIcon';
 //import api from '../services/api';
 
 import '../styles/pages/create-restaurante.css';
-//import '../styles/pages/restaurantes-map.css';
 
 export default function RestaurantMap() {
   const history = useHistory();
@@ -85,17 +84,19 @@ export default function RestaurantMap() {
             <legend>Dados</legend>
 
             <MapContainer
-              center={[-27.2092052,-49.6401092]}
+              center={[-22.8904994,-42.0404941]}
               style={{ width: '100%', height: 280 }}
               zoom={15}
-             // onClick={handleMapClick}
+              //onClick={handleMapClick}
             >
-               <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+               <TileLayer 
+                url={"https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"}
+              />
 
               { position.latitude !== 0 && (
                 <Marker
                   interactive={false}
-               //   icon={mapIcon}
+                  //icon={mapIcon}
                   position={[position.latitude, position.longitude]}
                 />
               )}

@@ -49,7 +49,7 @@ function RestaurantesMap() {
                     >
                         <Popup closeButton={false} minWidth={240} maxWidth={240} className="map-popup">
                             Tia Maluca
-                            <Link to="/restaurantes/1">
+                            <Link to="/restaurante/1">
                                 <FiArrowRight size={20} color="#FFF" />
                             </Link>
                         </Popup>

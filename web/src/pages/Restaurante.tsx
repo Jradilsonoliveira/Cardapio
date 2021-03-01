@@ -7,7 +7,7 @@ import L from 'leaflet';
 
 import mapMarkerImg from '../images/map-marker.svg';
 
-import '../styles/pages/restaurantes.css';
+import '../styles/pages/restaurante.css';
 
 const happyMapIcon = L.icon({
   iconUrl: mapMarkerImg,
@@ -23,7 +23,7 @@ export default function Restaurante() {
   return (
     <div id="page-restaurante">
       <aside>
-         <img src={mapMarkerImg} alt="Cardapio" />
+         <img src={mapMarkerImg} alt="Happy" />
 
         <footer>
           <button type="button" onClick={goBack}>
@@ -58,8 +58,8 @@ export default function Restaurante() {
           </div>
           
           <div className="restaurante-details-content">
-            <h1>Tia Maluca</h1>
-            <p>Restaurante antigo em Cabo Frio.</p>
+            <h1>Lar das meninas</h1>
+            <p>Presta assistência a crianças de 06 a 15 anos que se encontre em situação de risco e/ou vulnerabilidade social.</p>
 
             <div className="map-container">
               <MapContainer 
@@ -72,7 +72,9 @@ export default function Restaurante() {
                 scrollWheelZoom={false}
                 doubleClickZoom={false}
               >
-               <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                <TileLayer 
+                  url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWlndWVsaHAzNzMiLCJhIjoiY2tnNzE1MnptMDJ2NzJwanh4MGUxcHllMyJ9.G05-Q0BxD75MOCFG5uk9yw`}
+                />
                 <Marker interactive={false} icon={happyMapIcon} position={[-23.1857076, -46.8978057]} />
               </MapContainer>
 
